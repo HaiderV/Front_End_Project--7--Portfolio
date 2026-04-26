@@ -1,16 +1,74 @@
-# React + Vite
+# 🌐 Portfolio Website (Vite + React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and dynamic personal portfolio built using **Vite** and **React**. This project showcases my work, skills, and projects with a clean UI and smooth user experience. It also includes a fully functional contact form powered by an email backend using **EmailJS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* ⚡ **Fast Performance** – Built with Vite for lightning-fast development and optimized builds
+* 📱 **Responsive Design** – Works seamlessly across mobile, tablet, and desktop devices
+* 🎨 **Dynamic UI** – Interactive components and smooth design transitions
+* 📬 **Email Integration** – Contact form with real-time email sending using EmailJS
+* 🧩 **Component-Based Architecture** – Clean and reusable React components
+* 🌙 **Modern Styling** – Designed with a focus on simplicity and user experience
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** React, Vite
+* **Styling:** CSS and Tailwind
+* **Email Backend:** EmailJS
+
+---
+
+## 📬 Contact Form (EmailJS Setup)
+
+This project uses **EmailJS** to send emails directly from the frontend without a traditional backend.
+
+---
+
+## 🧠 What I Learned
+
+* ⚛️ **React Hooks**
+
+  * useState for managing UI state
+  * useEffect for lifecycle handling
+  * Component reusability and clean structure
+
+* 🎨 **UI/UX Design**
+
+  * Building responsive layouts
+  * Creating visually appealing and user-friendly interfaces
+  * Managing spacing, typography, and alignment
+
+* ⚡ **Performance Optimization**
+
+  * Using Vite for faster builds and development
+  * Writing efficient and clean code
+
+---
+
+## 📸 Preview
+
+<p align="center">
+  <img src="Screenshot 2026-04-26 121306.png" alt="Portfolio Screenshot" width="800"/>
+</p>
+
+---
+
+## 🌍 Live Demo
+
+
+
+---
+
+## 🙌 Acknowledgements
+
+* React & Vite community
+* EmailJS for easy email integration
+
+---
+
+⭐ If you like this project, consider giving it a star!
