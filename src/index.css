@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+body {
+  @apply text-gray-900;
+  background-color: #d7d7d7;
+  /* overflow-x: hidden; */
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+/* hi animation */
+/* Entrance animation */
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-entrance {
+  animation: entrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes tracking-in {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-entrance {
+  animation: tracking-in 1.2s cubic-bezier(0.215, 0.61, 0.355, 1.000) both;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-entrance {
+  animation: pop-in 0.6s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards;
+}
+
+/* haider animation */
+
+/* Phase 1: The Grand Entrance (Cleaner Skew) */
+@keyframes reveal-up {
+  0% {
+    opacity: 0;
+    /* 20px is smoother for the eye than 40px at large font sizes */
+    transform: translateY(20px) skewY(1deg); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewY(0deg);
+  }
+}
+
+/* Phase 2: The Subtle Loop (Floating) */
+@keyframes float-loop {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    /* Reduced to 6px for a premium "hover" feel instead of a bounce */
+    transform: translateY(-6px);
+  }
+}
+
+/* The dot "pulse" loop */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); } /* 1.5 is a bit jerky, 1.2 is smoother */
+}
+
+.animate-haider-entrance {
+  /* Use 'will-change' to force GPU acceleration (fixes lagginess) */
+  will-change: transform, opacity;
+  animation: 
+    reveal-up 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards,
+    float-loop 5s ease-in-out infinite 0.8s; 
+}
+
+.animate-dot {
+  display: inline-block;
+  will-change: transform, opacity;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+
+/* pursue animation */
+/* Slide from left */
+.animate-slideLeft {
+  opacity: 0;
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade up (for text stagger) */
+.animate-fadeUp {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delays */
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+
+.animate-borderGlow {
+  position: relative;
+}
+
+.animate-borderGlow::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, black, gray);
+  animation: growLine 0.8s ease-out forwards;
+}
+
+@keyframes growLine {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+/* button animation  */
+
+@keyframes button-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Subtle background shimmer to attract the eye */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-button-landing {
+  will-change: transform, opacity;
+  /* 'both' is the magic word here */
+  animation: button-entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Added a subtle shimmer effect on top of the black button */
+.btn-shimmer {
+  background: linear-gradient(
+    120deg, 
+    #000 30%, 
+    #333 50%, 
+    #000 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear 1.5s; /* Starts after button lands */
+}
+
+/* photo animation */
+/* Phase 1: Slide up and fade in from the bottom of the container */
+@keyframes photo-entrance {
+  0% {
+    opacity: 0;
+    /* Starts slightly lower and smaller */
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-photo-simple {
+  will-change: transform, opacity;
+  /* 'both' ensures it stays hidden before starting and stays visible after */
+  animation: photo-entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* global animation  */
+
+/* Base hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* When visible */
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
