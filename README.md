@@ -60,7 +60,7 @@ This project uses **EmailJS** to send emails directly from the frontend without 
 
 ## 🌍 Live Demo
 
-
+https://front-end-project-7-portfolio.vercel.app/
 
 ---
 
