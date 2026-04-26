@@ -36,8 +36,13 @@ function Contact() {
     <div id="contact">
       <Heading heading="Contact Me" backText="Get in Touch" />
 
-      <div className="overflow-hidden">
-        <div className="max-w-2xl mx-auto mt-20 md:mt-32 my-10 md:my-20 px-4 sm:px-6 md:px-12 py-6 md:py-12 bg-white border-2 border-black rounded-[2rem] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+      <div className="px-3 sm:px-4">
+        <div
+          className="w-full max-w-2xl mx-auto mt-16 md:mt-32 mb-10 md:mb-20 
+                    px-4 sm:px-6 md:px-10 py-6 md:py-12 
+                    bg-white border-2 border-black rounded-2xl 
+                    shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
+        >
           {/* Header Area */}
           <div className="flex items-center justify-between mb-10">
             <div className="flex gap-2">
@@ -119,9 +124,9 @@ function Contact() {
 
           {status && status !== "sending" && (
             <div
-  className={`fixed bottom-10 left-0 right-0 mx-auto w-fit z-50 flex items-center gap-4 px-6 py-4 rounded-2xl border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-bounce-in 
+              className={`fixed bottom-10 left-0 right-0 mx-auto w-fit z-50 flex items-center gap-4 px-6 py-4 rounded-2xl border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-bounce-in 
   ${status === "success" ? "bg-white" : "bg-black text-white"}`}
->
+            >
               {/* Icon */}
               <div
                 className={`w-6 h-6 rounded-full flex items-center justify-center border-2 ${status === "success" ? "border-black" : "border-white"}`}
