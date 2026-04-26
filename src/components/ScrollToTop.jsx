@@ -23,7 +23,7 @@ const ScrollToTop = () => {
     <button
       onClick={scrollToTop}
       className={`
-        fixed z-[9999]
+        fixed z-[999]
         
         /* Position (responsive) */
         bottom-4 right-4

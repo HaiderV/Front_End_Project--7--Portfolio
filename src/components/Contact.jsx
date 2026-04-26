@@ -124,7 +124,7 @@ function Contact() {
 
           {status && status !== "sending" && (
   <div
-    className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 
+    className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[1000]
     w-[90%] max-w-md 
     flex items-start gap-3 
     px-4 py-3 
