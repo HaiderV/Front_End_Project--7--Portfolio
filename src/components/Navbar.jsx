@@ -95,7 +95,7 @@ const Navbar = () => {
       </div>
 
       {/* Adding a small CSS-in-JS style for the items to keep the code clean */}
-      <style jsx>{`
+      <style>{`
         .nav-item {
           @apply cursor-pointer hover:bg-white hover:text-black px-3 py-2 rounded-full transition-colors duration-200 active:scale-95;
         }

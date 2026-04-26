@@ -9,7 +9,7 @@ function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("sending");
     emailjs
       .sendForm(
         "service_kmjjhjd",
@@ -37,7 +37,7 @@ function Contact() {
       <Heading heading="Contact Me" backText="Get in Touch" />
 
       <div className="overflow-hidden">
-        <div className="max-w-2xl mx-auto mt-32 my-20 p-6 md:p-12 bg-white border-2 border-black rounded-[2rem] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+        <div className="max-w-2xl mx-auto mt-20 md:mt-32 my-10 md:my-20 px-4 sm:px-6 md:px-12 py-6 md:py-12 bg-white border-2 border-black rounded-[2rem] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
           {/* Header Area */}
           <div className="flex items-center justify-between mb-10">
             <div className="flex gap-2">
@@ -45,7 +45,7 @@ function Contact() {
               <div className="w-3 h-3 rounded-full bg-gray-200"></div>
               <div className="w-3 h-3 rounded-full bg-gray-100"></div>
             </div>
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/30 italic reveal">
+            <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-black/30 italic truncate max-w-[120px] sm:max-w-none">
               Haider S Vadgamwala
             </span>
           </div>
@@ -109,7 +109,7 @@ function Contact() {
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-end mt-4">
+            <div className="flex justify-center md:justify-end mt-4">
               <button className="group relative px-8 py-4 bg-black text-white font-black uppercase tracking-[0.2em] rounded-xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl">
                 <span className="relative z-10">Send Message</span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -119,9 +119,9 @@ function Contact() {
 
           {status && status !== "sending" && (
             <div
-              className={`fixed bottom-10 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 px-6 py-4 rounded-2xl border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-bounce-in 
-    ${status === "success" ? "bg-white" : "bg-black text-white"} reveal`}
-            >
+  className={`fixed bottom-10 left-0 right-0 mx-auto w-fit z-50 flex items-center gap-4 px-6 py-4 rounded-2xl border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-bounce-in 
+  ${status === "success" ? "bg-white" : "bg-black text-white"}`}
+>
               {/* Icon */}
               <div
                 className={`w-6 h-6 rounded-full flex items-center justify-center border-2 ${status === "success" ? "border-black" : "border-white"}`}
