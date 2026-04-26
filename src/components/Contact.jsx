@@ -123,33 +123,39 @@ function Contact() {
           </form>
 
           {status && status !== "sending" && (
-            <div
-              className={`fixed bottom-10 left-0 right-0 mx-auto w-fit z-50 flex items-center gap-4 px-6 py-4 rounded-2xl border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] animate-bounce-in 
-  ${status === "success" ? "bg-white" : "bg-black text-white"}`}
-            >
-              {/* Icon */}
-              <div
-                className={`w-6 h-6 rounded-full flex items-center justify-center border-2 ${status === "success" ? "border-black" : "border-white"}`}
-              >
-                {status === "success" ? "✓" : "!"}
-              </div>
+  <div
+    className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 
+    w-[90%] max-w-md 
+    flex items-start gap-3 
+    px-4 py-3 
+    rounded-2xl border-2 border-black 
+    shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
+    ${status === "success" ? "bg-white" : "bg-black text-white"}`}
+  >
+    {/* Icon */}
+    <div
+      className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center border-2 text-xs
+      ${status === "success" ? "border-black" : "border-white"}`}
+    >
+      {status === "success" ? "✓" : "!"}
+    </div>
 
-              {/* Message */}
-              <p className="font-black uppercase tracking-widest text-xs">
-                {status === "success"
-                  ? "Message Received. Connection Established."
-                  : "System Error. Please Try Again."}
-              </p>
+    {/* Message */}
+    <p className="font-black uppercase tracking-wide text-xs sm:text-sm break-words">
+      {status === "success"
+        ? "Message Received. Connection Established."
+        : "System Error. Please Try Again."}
+    </p>
 
-              {/* Close Button */}
-              <button
-                onClick={() => setStatus(null)}
-                className="ml-4 opacity-30 hover:opacity-100 transition-opacity"
-              >
-                ✕
-              </button>
-            </div>
-          )}
+    {/* Close Button */}
+    <button
+      onClick={() => setStatus(null)}
+      className="ml-auto opacity-40 hover:opacity-100 transition-opacity text-sm flex-shrink-0"
+    >
+      ✕
+    </button>
+  </div>
+)}
         </div>
       </div>
     </div>
