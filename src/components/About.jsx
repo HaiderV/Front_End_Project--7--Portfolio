@@ -6,53 +6,84 @@ import { useScrollReveal } from "./useScrollReveal";
 function About() {
   useScrollReveal();
   const EducationCard = ({
-    bg = "bg-black",
-    text = "text-white",
-    border = "",
-    title,
-    description,
-    image,
-    titleColor = "",
-    descColor = "",
-  }) => {
-    return (
-      <div
-  className={`
-    w-[290px] sm:w-[320px] md:w-[340px]
-    ${bg}
-    ${text}
-    ${border}
-    rounded-2xl
-    overflow-hidden
-    shadow-lg
-    group
-    hover:scale-[1.02]
-    md:hover:scale-105
-    transition duration-300
-  `}
->
-        <div className="h-36 sm:h-44 overflow-hidden">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
-          />
-        </div>
+  title,
+  description,
+  image,
+}) => {
+  return (
+    <div
+      className="
+        w-full
+        max-w-[325px]
+        bg-white
+        border-2
+        border-black
+        rounded-2xl
+        overflow-hidden
+        group
+        shadow-sm
+        hover:shadow-xl
+        hover:-translate-y-1
+        transition-all
+        duration-300
+        ease-out
+      "
+    >
+      {/* Image */}
+      <div className="relative h-44 overflow-hidden bg-zinc-100">
+        <img
+          src={image}
+          alt={title}
+          className="
+            w-full
+            h-full
+            object-cover
+            group-hover:scale-105
+            transition-transform
+            duration-500
+            ease-out
+          "
+        />
 
-        <div className="p-3 sm:p-4">
+        {/* Soft Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="p-5 space-y-3">
+        {/* Title */}
+        <div className="space-y-2">
           <h3
-            className={`text-base sm:text-lg font-semibold mb-2 reveal ${titleColor}`}
+            className="
+              text-lg
+              font-bold
+              leading-snug
+              tracking-tight
+              text-black
+            "
           >
             {title}
           </h3>
 
-          <p className={`text-xs sm:text-sm leading-5 reveal ${descColor}`}>
-            {description}
-          </p>
+          {/* Divider */}
+          <div className="h-[2px] w-10 bg-black rounded-full group-hover:w-16 transition-all duration-300" />
         </div>
+
+        {/* Description */}
+        <p
+          className="
+            text-sm
+            leading-6
+            text-zinc-600
+          "
+        >
+          {description}
+        </p>
       </div>
-    );
-  };
+    </div>
+  );
+};
+
   return (
     <div className="About flex flex-col overflow-x-hidden" id="about">
       {/* Hero Section */}
@@ -146,23 +177,12 @@ function About() {
       </div>
 
       {/* Cards */}
-      {/* Cards */}
-      <div
-        className="
-    flex flex-col sm:flex-row flex-wrap
-    items-center justify-center
-    gap-4 sm:gap-6 md:gap-10
-    px-3 sm:px-6 md:px-12
-    py-4 md:py-14
-    mt-2 md:mt-10
-    mb-4 md:mb-8
-  "
-      >
+      <div className="flex flex-wrap justify-center gap-7 px-4 py-6">
         <EducationCard
           bg="bg-black"
           text="text-white"
           title="Frontend Developer"
-          image="https://img.freepik.com/premium-vector/meta-company-logo_265339-667.jpg?semt=ais_incoming&w=740&q=80"
+          image="data:image/png;base64,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"
           description="Completed frontend development course provided by Meta, focusing on modern UI and web fundamentals."
           descColor="text-gray-300"
         />
@@ -172,7 +192,7 @@ function About() {
           text="text-black"
           border="border border-black"
           title="Data Science"
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTinE3ZVzyOj-2szmzApJ2DFtcfsijVoY1mCg&s"
+          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy1pH7_JGQiPZ2uKFH5i34fpUUi3w1njb5OQ&s"
           description="Completed Data Science using Python course from Aligarh University, covering basics of data analysis and tools."
           descColor="text-gray-700"
         />

@@ -38,10 +38,28 @@ function Contact() {
 
       <div className="px-3 sm:px-4">
         <div
-          className="w-full max-w-2xl mx-auto mt-16 md:mt-32 mb-10 md:mb-20 
-                    px-4 sm:px-6 md:px-10 py-6 md:py-12 
-                    bg-white border-2 border-black rounded-2xl 
-                    shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
+          className="
+w-full
+
+max-w-[325px]
+sm:max-w-[420px]
+md:max-w-[700px]
+lg:max-w-[850px]
+
+mx-auto
+mt-16 md:mt-32
+mb-10 md:mb-20
+
+px-5 sm:px-8 md:px-10
+py-6 md:py-8
+
+bg-white
+border-2 border-black
+rounded-2xl
+
+shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]
+"
         >
           {/* Header Area */}
           <div className="flex items-center justify-between mb-10">
@@ -123,39 +141,39 @@ function Contact() {
           </form>
 
           {status && status !== "sending" && (
-  <div
-    className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[1000]
+            <div
+              className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[1000]
     w-[90%] max-w-md 
     flex items-start gap-3 
     px-4 py-3 
     rounded-2xl border-2 border-black 
     shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
     ${status === "success" ? "bg-white" : "bg-black text-white"}`}
-  >
-    {/* Icon */}
-    <div
-      className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center border-2 text-xs
+            >
+              {/* Icon */}
+              <div
+                className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center border-2 text-xs
       ${status === "success" ? "border-black" : "border-white"}`}
-    >
-      {status === "success" ? "✓" : "!"}
-    </div>
+              >
+                {status === "success" ? "✓" : "!"}
+              </div>
 
-    {/* Message */}
-    <p className="font-black uppercase tracking-wide text-xs sm:text-sm break-words">
-      {status === "success"
-        ? "Message Received. Connection Established."
-        : "System Error. Please Try Again."}
-    </p>
+              {/* Message */}
+              <p className="font-black uppercase tracking-wide text-xs sm:text-sm break-words">
+                {status === "success"
+                  ? "Message Received. Connection Established."
+                  : "System Error. Please Try Again."}
+              </p>
 
-    {/* Close Button */}
-    <button
-      onClick={() => setStatus(null)}
-      className="ml-auto opacity-40 hover:opacity-100 transition-opacity text-sm flex-shrink-0"
-    >
-      ✕
-    </button>
-  </div>
-)}
+              {/* Close Button */}
+              <button
+                onClick={() => setStatus(null)}
+                className="ml-auto opacity-40 hover:opacity-100 transition-opacity text-sm flex-shrink-0"
+              >
+                ✕
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
