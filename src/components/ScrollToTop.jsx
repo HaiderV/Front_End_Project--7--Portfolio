@@ -19,7 +19,7 @@ const ScrollToTopAndResume = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowMobileHint(false);
-    }, 4000);
+    }, 20000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -68,9 +68,21 @@ const ScrollToTopAndResume = () => {
           }
         `}
       >
-        <div className="bg-white text-black text-[10px] font-semibold px-3 py-1 rounded-full shadow border border-black/10 animate-bounce">
-          Download Resume ↓
-        </div>
+        <div className="
+  bg-white text-black
+  text-xs sm:text-sm
+  font-bold
+
+  px-4 py-2
+
+  rounded-full
+  shadow-lg
+  border border-black/10
+
+  animate-bounce
+">
+  Download Resume ↓
+</div>
       </div>
 
       {/* Resume Button */}
@@ -84,9 +96,9 @@ const ScrollToTopAndResume = () => {
           flex items-center justify-center
           md:justify-start
 
-          h-10 w-10
-          sm:h-11 sm:w-11
-          md:h-12 md:w-12
+          h-12 w-12
+sm:h-14 sm:w-14
+md:h-12 md:w-12
           md:hover:w-52
 
           rounded-full
@@ -140,7 +152,7 @@ const ScrollToTopAndResume = () => {
             viewBox="0 0 24 24"
             strokeWidth={2.5}
             stroke="currentColor"
-            className="w-5 h-5"
+            className="w-6 h-6 md:w-5 md:h-5"
           >
             <path
               strokeLinecap="round"
@@ -158,9 +170,9 @@ const ScrollToTopAndResume = () => {
         className="
           relative
 
-          h-10 w-10
-          sm:h-11 sm:w-11
-          md:h-12 md:w-12
+          h-12 w-12
+sm:h-14 sm:w-14
+md:h-12 md:w-12
 
           flex items-center justify-center
 
@@ -189,7 +201,7 @@ const ScrollToTopAndResume = () => {
           viewBox="0 0 24 24"
           strokeWidth={3}
           stroke="currentColor"
-          className="relative z-10 w-5 h-5"
+          className="w-6 h-6 md:w-5 md:h-5"
         >
           <path
             strokeLinecap="round"
