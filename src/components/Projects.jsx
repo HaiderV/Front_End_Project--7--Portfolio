@@ -32,6 +32,13 @@ const projects = [
       "Supports over 100 currencies with real-time conversion rates and a decent, user-friendly interface.",
     link: "https://github.com/HaiderV/Front_End_Project--4--currency",
   },
+  {
+    type: "Front-End",
+    title: "HV_Cloths",
+    description:
+      "A modern e-commerce platform for browsing and purchasing clothing items with a sleek, responsive design.",
+    link: "https://github.com/HaiderV/HV_Cloths",
+  },
 ];
 
 function Projects() {
