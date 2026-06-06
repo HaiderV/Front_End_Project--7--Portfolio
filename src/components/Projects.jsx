@@ -43,7 +43,7 @@ const projects = [
     type: "Front-End",
     title: "CAIAS NOTES",
     description:
-      "CAIAS Notes is a modern academic resource platform designed for students to access, preview, and download study materials from a single place. It combines secure authentication, cloud-based file management, and a clean responsive interface to create a seamless learning experience.",
+      "A student-focused platform for accessing, previewing, and downloading academic notes, built with React, TypeScript, Firebase, and Cloudinary.",
     link: "https://github.com/HaiderV/CAIAS-NOTES",
   },
 ];
