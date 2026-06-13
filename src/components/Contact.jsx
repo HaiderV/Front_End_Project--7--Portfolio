@@ -33,7 +33,7 @@ function Contact() {
   };
   useScrollReveal();
   return (
-    <div id="contact">
+    <div id="contact" className="pb-16 md:pb-32">
       <Heading heading="Contact Me" backText="Get in Touch" />
 
       <div className="px-3 sm:px-4">
@@ -47,7 +47,7 @@ md:max-w-[700px]
 lg:max-w-[850px]
 
 mx-auto
-mt-16 md:mt-32
+mt-10 md:mt-20
 mb-10 md:mb-20
 
 px-5 sm:px-8 md:px-10

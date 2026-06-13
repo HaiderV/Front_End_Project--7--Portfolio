@@ -53,13 +53,14 @@ const Navbar = () => {
     "skills",
     "projects",
     "experience",
+    "resume",
     "contact",
   ];
 
   return (
     <nav
       className={`
-        sticky top-0 z-50 bg-[#000] text-white py-4
+        fixed top-0 left-0 w-full z-50 bg-[#000] text-white py-2 md:py-4
         transition-transform duration-300
         ${visible ? "translate-y-0" : "-translate-y-full"}
       `}
@@ -73,7 +74,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Logo"
-            className="h-14 w-auto active:scale-95 reveal"
+            className="h-10 sm:h-12 md:h-14 w-auto active:scale-95"
           />
         </div>
 

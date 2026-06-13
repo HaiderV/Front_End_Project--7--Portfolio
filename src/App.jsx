@@ -6,6 +6,7 @@ import Body from "./components/body";
 import Skill from "./components/Skill";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import DownloadResume from "./components/DownloadResume";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -18,6 +19,7 @@ function App() {
       <Skill />
       <Projects />
       <Experience />
+      <DownloadResume />
       <Contact />
       <Footer />
       <ScrollToTop />

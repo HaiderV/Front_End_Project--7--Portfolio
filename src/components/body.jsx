@@ -9,9 +9,9 @@ function Main() {
       className="relative z-20 flex-1 overflow-y-auto h-screen"
       id="home"
     >
-      <div className="Landing flex justify-center gap-0 h-screen">
+      <div className="Landing flex justify-center gap-0 h-screen pt-20">
         <div className="sideWhite w-full h-full flex-[1] flex items-center justify-center p-8 md:p-16">
-          <div className="napo flex flex-col items-start max-w-2xl w-full">
+          <div className="pt-15 napo flex flex-col items-start max-w-2xl w-full">
             {/* Greeting tag */}
             <div className="inline-block mb-3 px-4 py-1.5 border-2 border-black rounded-full animate-[slideDown_0.6s_ease-out_0.2s_both]">
               <span className="text-sm font-bold tracking-wider uppercase">
@@ -40,7 +40,7 @@ function Main() {
                   <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                 </div>
               </div>
-              
+
               <div className="group bg-white border-2 border-black px-5 py-3 rounded-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:bg-black hover:text-white cursor-pointer">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg md:text-2xl font-bold">
@@ -62,10 +62,10 @@ function Main() {
             >
               <span className="relative z-10 flex items-center gap-2">
                 View My Projects
-                <svg 
-                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

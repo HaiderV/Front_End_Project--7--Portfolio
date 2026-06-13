@@ -39,6 +39,13 @@ const projects = [
       "A modern e-commerce platform for browsing and purchasing clothing items with a sleek, responsive design.",
     link: "https://github.com/HaiderV/HV_Cloths",
   },
+  {
+    type: "Front-End",
+    title: "CAIAS NOTES",
+    description:
+      "A student-focused platform for accessing, previewing, and downloading academic notes, built with React, TypeScript, Firebase, and Cloudinary.",
+    link: "https://github.com/HaiderV/CAIAS-NOTES",
+  },
 ];
 
 function Projects() {

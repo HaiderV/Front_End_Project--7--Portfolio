@@ -22,7 +22,7 @@ function Experience() {
       <section id="experience" className="py-24 bg-[#d7d7d7]">
         <div className="max-w-7xl mx-auto px-6">
           {/* The Roadmap Container */}
-          <div className="relative">
+          <div className="relative pb-16">
             {/* Central Vertical Line (The Trunk) */}
             <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-[3px] bg-black rounded-full"></div>
 
@@ -41,8 +41,8 @@ function Experience() {
             </div>
 
             {/* Bottom Cap */}
-            <div className="flex justify-center pt-8">
-              <div className="bg-black text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.4em] z-10 shadow-lg reveal">
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10">
+              <div className="bg-black text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.4em] shadow-lg whitespace-nowrap">
                 End of Log
               </div>
             </div>

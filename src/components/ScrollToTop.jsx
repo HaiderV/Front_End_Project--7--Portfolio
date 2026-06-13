@@ -1,215 +1,106 @@
 import { useEffect, useState } from "react";
-import Resume from "../assets/haider-resume.pdf";
+import Chat from "./Chat";
+import { motion, AnimatePresence } from "framer-motion";
+import Bot from "../assets/bot.png";
 
 const ScrollToTopAndResume = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [showMobileHint, setShowMobileHint] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipText, setTooltipText] = useState('Need help?');
 
+  const tooltips = ['Need help?', 'Ask me anything', "I'm online"];
+
+  // Periodically toggle the engagement tooltip
   useEffect(() => {
-    const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 400);
+    let timeoutId;
+    const interval = setInterval(() => {
+      if (!isOpen) {
+        const randomText = tooltips[Math.floor(Math.random() * tooltips.length)];
+        setTooltipText(randomText);
+        setShowTooltip(true);
+
+        // Hide tooltip after 5 seconds
+        timeoutId = setTimeout(() => setShowTooltip(false), 5000);
+      }
+    }, 12000);
+
+    return () => {
+      clearInterval(interval);
+      if (timeoutId) clearTimeout(timeoutId);
     };
+  }, [isOpen]);
 
-    window.addEventListener("scroll", toggleVisibility);
-
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
-
-  // Hide mobile hint after 4 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowMobileHint(false);
-    }, 20000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const handleDownloadResume = () => {
-    const link = document.createElement("a");
-    link.href = Resume;
-    link.download = "Haider-Resume.pdf";
-    link.click();
+  // Floating & breathing keyframe variations for launcher
+  const launcherVariants = {
+    floating: {
+      y: [0, -8, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+    hover: {
+      scale: 1.08,
+      boxShadow: "0 8px 30px rgba(255,255,255,0.12)",
+    },
+    tap: {
+      scale: 0.95,
+    },
   };
 
   return (
-    <div
-      className={`
-        fixed z-[999]
-        bottom-4 right-4
-        sm:bottom-6 sm:right-6
-        md:bottom-8 md:right-8
-
-        flex flex-col items-end gap-3
-
-        transition-all duration-500 ease-in-out
-        ${
-          isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10 pointer-events-none"
-        }
-      `}
-    >
-      {/* Mobile Hint */}
-      <div
-        className={`
-          md:hidden
-          transition-all duration-500
-          ${
-            showMobileHint
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-y-2 pointer-events-none"
-          }
-        `}
-      >
-        <div className="
-  bg-white text-black
-  text-xs sm:text-sm
-  font-bold
-
-  px-4 py-2
-
-  rounded-full
-  shadow-lg
-  border border-black/10
-
-  animate-bounce
-">
-  Download Resume ↓
-</div>
-      </div>
-
-      {/* Resume Button */}
-      <button
-        onClick={handleDownloadResume}
-        title="Download Resume"
-        className="
-          group
-          relative
-
-          flex items-center justify-center
-          md:justify-start
-
-          h-12 w-12
-sm:h-14 sm:w-14
-md:h-12 md:w-12
-          md:hover:w-52
-
-          rounded-full
-          border-2 border-black
-          bg-white text-black
-
-          shadow-xl
-          overflow-hidden
-
-          transition-all duration-300 ease-in-out
-
-          hover:scale-105
-          active:scale-95
-
-          md:hover:bg-black
-          md:hover:text-white
-        "
-      >
-        {/* Text */}
-        <span
-          className="
-            hidden md:block
-
-            ml-5
-            pr-12
-
-            text-xs font-bold tracking-wide uppercase
-            whitespace-nowrap
-
-            opacity-0
-            transition-opacity duration-200
-
-            group-hover:opacity-100
-          "
-        >
-          Download Resume
-        </span>
-
-        {/* Icon */}
-        <div
-          className="
-            md:absolute md:right-0
-            flex items-center justify-center
-            w-full h-full
-            md:w-12 md:h-12
-          "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2.5}
-            stroke="currentColor"
-            className="w-6 h-6 md:w-5 md:h-5"
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+      {/* Engagement Tooltip */}
+      <AnimatePresence>
+        {showTooltip && !isOpen && (
+          <motion.div
+            key="tooltip"
+            initial={{ opacity: 0, y: 15, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.9 }}
+            className="mb-3 mr-2 bg-neutral-950/90 backdrop-blur-xl border border-neutral-800/80 text-neutral-200 text-xs font-medium px-4 py-2.5 rounded-xl shadow-lg pointer-events-none relative before:content-[''] before:absolute before:top-full before:right-6 before:border-8 before:border-transparent before:border-t-neutral-950/90"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+            <span className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+              {tooltipText}
+            </span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Launcher Button & Chatbot Interface Dropdown Window */}
+      <AnimatePresence mode="wait">
+        {!isOpen ? (
+          <motion.button
+            key="launcher"
+            variants={launcherVariants}
+            animate="floating"
+            whileHover="hover"
+            whileTap="tap"
+            onClick={() => setIsOpen(true)}
+            className=" w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center overflow-hidden "
+            aria-label="Open Chatbot"
+          >
+            {/* Glass Reflection */}
+            <div
+              className=" absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-white/20 via-transparent to-transparent "
             />
-          </svg>
-        </div>
-      </button>
 
-      {/* Scroll To Top */}
-      <button
-        onClick={scrollToTop}
-        title="Scroll to Top"
-        className="
-          relative
+            {/* Soft Inner Layer */}
+            <div className="absolute inset-0 rounded-full bg-white/5" />
 
-          h-12 w-12
-sm:h-14 sm:w-14
-md:h-12 md:w-12
-
-          flex items-center justify-center
-
-          rounded-full
-          bg-black text-white
-
-          shadow-xl
-
-          transition-all duration-300 ease-in-out
-
-          hover:scale-105
-          hover:bg-white
-          hover:text-black
-          hover:border-2
-          hover:border-black
-
-          active:scale-95
-        "
-      >
-        {/* Ping */}
-        <span className="absolute inset-0 rounded-full bg-black/20 animate-ping pointer-events-none"></span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={3}
-          stroke="currentColor"
-          className="w-6 h-6 md:w-5 md:h-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.5 15.75l7.5-7.5 7.5 7.5"
-          />
-        </svg>
-      </button>
+            {/* Bot Image */}
+            <img
+              src={Bot}
+              alt="Bot Launcher"
+              className=" w-full h-full rounded-full object-cover "
+            />
+          </motion.button>
+        ) : (
+          <Chat key="chat" onClose={() => setIsOpen(false)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
