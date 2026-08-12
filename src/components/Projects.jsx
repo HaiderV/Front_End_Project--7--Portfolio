@@ -46,6 +46,13 @@ const projects = [
       "A student-focused platform for accessing, previewing, and downloading academic notes, built with React, TypeScript, Firebase, and Cloudinary.",
     link: "https://github.com/HaiderV/CAIAS-NOTES",
   },
+  {
+    type: "Full-Stack",
+    title: "PAPER-PILOT",
+    description:
+      "Paper Pilot — A Dockerized PDF processing tool that converts scanned PDFs into searchable, OCR-enabled documents using OCRmyPDF. Includes Ghostscript-based PDF compression and optimization for efficient file handling.",
+    link: "https://github.com/HaiderV/PaperPilot",
+  },
 ];
 
 function Projects() {

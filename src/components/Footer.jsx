@@ -31,8 +31,7 @@ function Footer() {
                 <span className="text-gray-500">future together.</span>
               </h3>
               <p className="text-gray-400 font-medium leading-relaxed">
-                First-year BCA student focused on AI/ML, building systems that
-                blend data science with premium web experiences.
+                Second-year BCA student focused on AI/ML, backend development, and cloud technologies, building practical systems that bring together intelligent solutions and reliable software.
               </p>
             </div>
 

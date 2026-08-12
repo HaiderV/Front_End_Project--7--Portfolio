@@ -50,6 +50,14 @@ const mySkills = [
     logo: "https://thumbs.dreamstime.com/b/dynamic-analytics-logo-design-effective-data-representation-357516342.jpg",
   },
   {
+    name: "SQL",
+    logo: "https://icon.icepanel.io/Technology/svg/Azure-SQL-Database.svg",
+  },
+  {
+    name: "Express js",
+    logo: "https://www.manektech.com/storage/developer/1646733543.webp",
+  },
+  {
     name: "Video Editing",
     logo: "https://static.vecteezy.com/system/resources/thumbnails/010/952/951/small/movie-film-editor-logo-design-video-editing-logo-concept-vector.jpg",
   },

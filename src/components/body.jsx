@@ -35,7 +35,7 @@ function Main() {
               <div className="group bg-black text-white px-5 py-3 rounded-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl cursor-pointer">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl md:text-3xl font-bold">
-                    Frontend Developer
+                    Backend Developer
                   </h3>
                   <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                 </div>
@@ -44,7 +44,7 @@ function Main() {
               <div className="group bg-white border-2 border-black px-5 py-3 rounded-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:bg-black hover:text-white cursor-pointer">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg md:text-2xl font-bold">
-                    Data Science Enthusiast
+                    AI/ML & Cloud Enthusiast
                   </h3>
                   <div className="w-2 h-2 bg-black group-hover:bg-white rounded-full"></div>
                 </div>
